@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+        <form method="get" action="index.html" alert="Success">
+            <h1> Create Account</h1>
+            <div class="input-field">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="text" name="fname" placeholder="First Name" required=""></div>
+            <div class="input-field">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="text" name="lname" placeholder="Last Name" required=""></div>
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email" required=""></div>
+            <div class="input-field">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+            <input type="password" name="password" id="password" placeholder="Password" required=""></div>
+            <div class="input-field">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password"></div>
+            <div class="input-field">
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+            <input type="number" name="phone" placeholder="Phone Number" required=""></div>
+            <button style="margin-top:10px; cursor: pointer;" id="signup"> SignUp</button>
+            <h5>Already have an account! <a class="ghost" href="index.html" id="signIn" style="color:blue;"><u>Log In</u></a></h5>
+        </form>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="https://kit.fontawesome.com/64d58efce2.js"
+    crossorigin="anonymous">
+        var password = document.getElementById("password") 
+        var confirm_password = document.getElementById("confirm_password");
+        var signup = document.getElementById("signup")
+        function validatePassword(){
+            if(password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+       
+        </script>
+</html>
